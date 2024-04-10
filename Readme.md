@@ -6,6 +6,8 @@ Below is a template for a README file tailored for a Django project that utilize
 
 This Django project harnesses the power of Django Channels with Daphne to enable real-time communication features in your web application.
 
+[Detailed Blog](https://leo-stacks.com/blogs/how-to-use-websockets-django/ "Visit Blog")
+
 ## Installation
 
 1. Clone the repository:
