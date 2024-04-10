@@ -49,7 +49,3 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this template to fit your specific project requirements and structure. This README file provides essential information for setting up and running a Django project with Daphne and Django Channels.
