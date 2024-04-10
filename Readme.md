@@ -1,7 +1,3 @@
-Below is a template for a README file tailored for a Django project that utilizes Django Channels with Daphne:
-
----
-
 # Django Project with Daphne and Django Channels
 
 This Django project harnesses the power of Django Channels with Daphne to enable real-time communication features in your web application.
