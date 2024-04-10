@@ -1,40 +1,57 @@
-Installation
-Channels is available on PyPI - to install it run:
+Below is a template for a README file tailored for a Django project that utilizes Django Channels with Daphne:
 
-python -m pip install -U 'channels[daphne]'
-This will install Channels together with the Daphne ASGI application server. If you wish to use a different application server you can pip install channels, without the optional daphne add-on.
+---
 
-Once that’s done, you should add daphne to the beginning of your INSTALLED_APPS setting:
+# Django Project with Daphne and Django Channels
 
-INSTALLED_APPS = (
-    "daphne",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.sites",
-    ...
-)
-This will install the Daphne’s ASGI version of the runserver management command.
+This Django project harnesses the power of Django Channels with Daphne to enable real-time communication features in your web application.
 
-You can also add "channels" for Channel’s runworker command.
+## Installation
 
-Then, adjust your project’s asgi.py file, e.g. myproject/asgi.py, to wrap the Django ASGI application:
+1. Clone the repository:
 
-import os
+    ```bash
+    git clone https://github.com/Leo-Stacks/django-websockets
+    cd django-websockets
+    ```
 
-from channels.routing import ProtocolTypeRouter
-from django.core.asgi import get_asgi_application
+2. Create and activate a virtual environment:
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
-# Initialize Django ASGI application early to ensure the AppRegistry
-# is populated before importing code that may import ORM models.
-django_asgi_app = get_asgi_application()
+    ```bash
+    python -m venv venv
+    source venv/bin/activate
+    ```
 
-application = ProtocolTypeRouter({
-    "http": django_asgi_app,
-    # Just HTTP for now. (We can add other protocols later.)
-})
-And finally, set your ASGI_APPLICATION setting to point to that routing object as your root application:
+3. Install dependencies:
 
-ASGI_APPLICATION = "myproject.asgi.application"
-That’s it! Once enabled, daphne will integrate itself into Django and take control of the runserver command. 
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+1. Run migrations:
+
+    ```bash
+    python manage.py migrate
+    ```
+
+2. Start the Daphne server:
+
+    ```bash
+    python manage.py runserver
+    ```
+
+3. Access your Django application at `http://localhost:8000`.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Feel free to customize this template to fit your specific project requirements and structure. This README file provides essential information for setting up and running a Django project with Daphne and Django Channels.
